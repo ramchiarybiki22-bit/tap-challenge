@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Tap Challenge</title>
+</head>
+
+<body>
+
+  <h1>🔥 Tap Challenge</h1>
+
+  <p>30 seconds mein jitna ho sake tap karo!</p>
+<button id="startButton">START GAME</button>
+  <div id="countdown"></div>
+  <button id="tapButton">TAP!</button>
+  <audio id="tapSound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+  <audio id="gameOverSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+<div id="combo">COMBO x0</div>
+  <div id="comboMessage"></div>
+  <div id="pointsPopup"></div>
+  <div class="stats">
+
+    <div>
+      <span>Score</span>
+      <strong id="score">0</strong>
+    </div>
+
+    <div>
+      <span>🏆 Best</span>
+      <strong id="bestScore">0</strong>
+    </div>
+
+    <div>
+      <span>Time</span>
+      <strong><span id="time">30</span>s</strong>
+    </div>
+
+  </div>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+<div id="gameOver"></div>
+  <button id="restartButton">RESTART</button>
+<button id="soundButton">🔊 SOUND ON</button>
+  <script src="./script.js"></script>
+
+</body>
+</html>
