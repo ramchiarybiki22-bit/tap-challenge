@@ -334,3 +334,26 @@ button {
 #tapButton:not(:disabled) {
   animation: tapPulse 1.5s ease-in-out infinite;
 }
+  #sponsorBox {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 350px;
+  text-align: center;
+  border: 1px dashed #888;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+  #sponsorBox {
+  display: block;
+  margin: 20px auto;
+  padding: 16px;
+  max-width: 350px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
