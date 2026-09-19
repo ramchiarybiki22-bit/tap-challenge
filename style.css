@@ -1,359 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 25px 15px;
+  min-height: 100vh;
   text-align: center;
-  background: #111827;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #111827, #1e293b);
   color: white;
-  padding: 30px 15px;
 }
 
 h1 {
-  margin-top: 10px;
-  margin-bottom: 8px;
-  font-size: 34px;
-  letter-spacing: 1px;
+  margin: 10px 0 8px;
+  font-size: 32px;
 }
 
-body > p {
-  margin-top: 0;
-  font-size: 20px;
-  color: #d1d5db;
+p {
+  color: #cbd5e1;
+  font-size: 16px;
 }
-#startButton {
-  padding: 14px 30px;
-  font-size: 20px;
-  font-weight: bold;
+
+button {
+  display: block;
+  width: min(90%, 360px);
+  margin: 14px auto;
+  padding: 14px 20px;
   border: none;
-  border-radius: 10px;
-  background: #3b82f6;
-  color: white;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
   cursor: pointer;
-  margin: 20px 0;
 }
 
-#startButton:active {
-  transform: scale(0.95);
+#startButton {
+  background: #22c55e;
+  color: white;
 }
+
 #tapButton {
-  width: 220px;
-  height: 220px;
+  width: 190px;
+  height: 190px;
+  margin: 25px auto;
   border-radius: 50%;
-  border: none;
-  font-size: 36px;
-  font-weight: bold;
   background: #ef4444;
   color: white;
-  margin: 40px 0 25px;
-  box-shadow: 0 8px 0 #991b1b;
-  cursor: pointer;
-  transition: transform 0.1s;
+  font-size: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 #tapButton:active {
-  transform: scale(0.94) translateY(6px);
-  box-shadow: 0 2px 0 #991b1b;
+  transform: scale(0.94);
 }
 
-#tapButton:active {
-  transform: translateY(6px);
-  box-shadow: 0 2px 0 #991b1b;
-}
-#score {
-  transition: transform 0.1s;
-}
-
-#score.pop {
-  transform: scale(1.3);
-}
-#tapButton:disabled {
-  background: #555;
-  box-shadow: none;
+#countdown {
+  height: 45px;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .stats {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 10px auto 20px;
-  max-width: 500px;
+  margin: 20px auto;
+  max-width: 420px;
 }
 
 .stats div {
-  background: #1f2937;
-  padding: 12px 18px;
+  flex: 1;
+  padding: 12px 5px;
   border-radius: 12px;
-  min-width: 75px;
+  background: rgba(255,255,255,0.08);
 }
 
 .stats span {
   display: block;
-  font-size: 14px;
-  color: #9ca3af;
-  margin-bottom: 5px;
+  color: #cbd5e1;
+  font-size: 13px;
 }
 
 .stats strong {
   display: block;
+  margin-top: 5px;
   font-size: 24px;
 }
 
 .progress {
-  width: 100%;
-  height: 10px;
-  background: #374151;
-  border-radius: 10px;
-  margin: 10px 0 25px;
+  width: min(90%, 420px);
+  height: 12px;
+  margin: 15px auto;
+  background: #334155;
+  border-radius: 20px;
   overflow: hidden;
 }
 
 #progressBar {
   width: 100%;
   height: 100%;
-  display: block;
   background: #22c55e;
-  border-radius: 10px;
-  transition: width 0.2s linear;
+  transition: width 1s linear;
 }
 
-#restartButton {
-  padding: 14px 30px;
-  font-size: 18px;
+#combo {
+  font-size: 22px;
   font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  background: #22c55e;
-  color: white;
+  margin: 10px;
 }
-#gameOver {
-  display: none;
-}
-#gameOver {
-  display: none;
-  background: #1f2937;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 15px;
-  max-width: 350px;
+
+#comboMessage {
   font-size: 22px;
   font-weight: bold;
 }
-#gameOver strong {
-  font-size: 28px;
-}
-#combo {
+
+#pointsPopup {
+  height: 25px;
   font-size: 20px;
   font-weight: bold;
-  margin: 10px 0;
-  min-height: 25px;
-}
-#comboMessage {
-  min-height: 25px;
-  margin: 5px 0 15px;
-  font-size: 32px;
-  font-weight: bold;
-}
-#comboMessage {
-  animation: comboPop 0.3s ease;
 }
 
-@keyframes comboPop {
-  0% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(1);
-  }
+#gameOver {
+  margin: 20px auto;
+  font-size: 22px;
+  font-weight: bold;
 }
-@media (max-width: 600px) {
+
+#restartButton {
+  background: #f59e0b;
+  color: white;
+}
+
+#soundButton {
+  background: #475569;
+  color: white;
+}
+
+#sponsorBox {
+  display: block;
+  width: min(90%, 420px);
+  margin: 25px auto;
+  padding: 18px;
+  border: 2px dashed #64748b;
+  border-radius: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+#gamesPage,
+#aboutPage,
+#privacyPage,
+#termsPage,
+#contactPage {
+  width: min(92%, 500px);
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #1e293b;
+}
+
+@media (max-width: 500px) {
   h1 {
     font-size: 28px;
   }
 
-  body > p {
-    font-size: 16px;
-  }
-
   #tapButton {
-    width: 180px;
-    height: 180px;
-    font-size: 30px;
-  }
-
-  .stats {
-    gap: 6px;
-  }
-
-  .stats div {
-    min-width: 65px;
-    padding: 10px 8px;
+    width: 170px;
+    height: 170px;
+    font-size: 27px;
   }
 
   .stats strong {
-    font-size: 20px;
+    font-size: 21px;
   }
-}
-#soundButton {
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  background: #f59e0b;
-  color: white;
-  margin-top: 10px;
-  cursor: pointer;
-}
-@keyframes tapShake {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08) rotate(2deg); }
-  100% { transform: scale(1); }
-}
-
-#tapButton.shake {
-  animation: tapShake 0.15s ease;
-}
-#pointsPopup {
-  min-height: 30px;
-  font-size: 24px;
-  font-weight: bold;
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-#pointsPopup.show {
-  animation: pointsPop 0.5s ease;
-}
-
-@keyframes pointsPop {
-  0% {
-    opacity: 1;
-    transform: translateY(10px);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-}
-#comboMessage.show {
-  animation: comboCelebrate 0.5s ease;
-}
-
-@keyframes comboCelebrate {
-  0% {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-#countdown {
-  font-size: 48px;
-  font-weight: bold;
-  min-height: 60px;
-  margin: 15px 0;
-}
-html {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  touch-action: manipulation;
-}
-#startButton {
-  box-shadow: 0 5px 0 #1d4ed8;
-}
-
-#startButton:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px 0 #1d4ed8;
-}
-#restartButton {
-  cursor: pointer;
-  box-shadow: 0 5px 0 #15803d;
-}
-
-#restartButton:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px 0 #15803d;
-}
-#gameOver {
-  animation: gameOverPop 0.4s ease;
-}
-
-@keyframes gameOverPop {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-#bestScore {
-  transition: transform 0.2s ease;
-}
-
-#bestScore.newBest {
-  transform: scale(1.3);
-#tapButton:disabled {
-  opacity: 0.6;
-  transform: scale(0.95);
-}
-  .stats div {
-  border: 1px solid #374151;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-  #tapButton {
-  box-shadow: 0 8px 0 #991b1b, 0 12px 25px rgba(0, 0, 0, 0.35);
-}
-  #tapButton {
-  box-shadow: 0 8px 0 #991b1b, 0 0 25px rgba(239, 68, 68, 0.45);
-}
-  @keyframes tapPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.03);
-  }
-}
-
-#tapButton:not(:disabled) {
-  animation: tapPulse 1.5s ease-in-out infinite;
-}
-  #sponsorBox {
-  margin: 20px auto;
-  padding: 15px;
-  max-width: 350px;
-  text-align: center;
-  border: 1px dashed #888;
-  border-radius: 10px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-  #sponsorBox {
-  display: block;
-  margin: 20px auto;
-  padding: 16px;
-  max-width: 350px;
-  text-align: center;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
 }
