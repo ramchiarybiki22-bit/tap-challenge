@@ -204,3 +204,17 @@ button {
     font-size: 21px;
   }
 }
+.stats div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.stats div strong {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.stats div span {
+  font-size: 14px;
+  font-weight: 600;
+}
