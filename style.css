@@ -40,14 +40,20 @@ button {
 }
 
 #tapButton {
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   margin: 25px auto;
   border-radius: 50%;
-  background: #ef4444;
+  border: 6px solid rgba(255,255,255,0.25);
+  background: linear-gradient(145deg, #ff3b3b, #c90000);
   color: white;
-  font-size: 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.45),
+    inset 0 4px 8px rgba(255,255,255,0.2);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 #tapButton:active {
