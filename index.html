@@ -3,84 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
   <title>Tap Challenge</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>🔥 Tap Challenge</h1>
+<h1>🔥 Tap Challenge</h1>
+<p>30 seconds mein jitna ho sake tap karo!</p>
 
-  <p>30 seconds mein jitna ho sake tap karo!</p>
+<button id="startButton">START GAME</button>
 
-  <button id="startButton">START GAME</button>
+<div id="countdown"></div>
 
-  <div id="countdown"></div>
+<button id="tapButton">TAP!</button>
 
-  <button id="tapButton">TAP!</button>
+<audio id="tapSound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+<audio id="gameOverSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
 
-  <audio id="tapSound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
-  <audio id="gameOverSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+<div id="combo">COMBO x0</div>
+<div id="comboMessage"></div>
+<div id="pointsPopup"></div>
 
-  <div id="combo">COMBO x0</div>
-  <div id="comboMessage"></div>
-  <div id="pointsPopup"></div>
-
-  <div class="stats">
-    <div>
-      <span>Score</span>
-      <strong id="score">0</strong>
-    </div>
-
-    <div>
-      <span>🏆 Best</span>
-      <strong id="bestScore">0</strong>
-    </div>
-
-    <div>
-      <span>Time</span>
-      <strong><span id="time">30</span>s</strong>
-    </div>
+<div class="stats">
+  <div>
+    <span>Score</span>
+    <strong id="score">0</strong>
   </div>
 
-  <div class="progress">
-    <div id="progressBar"></div>
+  <div>
+    <span>🏆 Best</span>
+    <strong id="bestScore">0</strong>
   </div>
 
-  <div id="gameOver"></div>
+  <div>
+    <span>Time</span>
+    <strong><span id="time">30</span>s</strong>
+  </div>
+</div>
 
-  <button id="restartButton">RESTART</button>
-  <button id="soundButton">🔊 SOUND ON</button>
+<div class="progress">
+  <div id="progressBar"></div>
+</div>
 
-  <button onclick="shareScore()">📤 Share Score</button>
+<div id="gameOver"></div>
 
-  <button onclick="document.getElementById('gamesPage').style.display='block'">
-    🎮 More Games
-    <button onclick="document.getElementById('aboutPage').style.display='block'">
+<button id="restartButton">RESTART</button>
+
+<button id="soundButton">🔊 SOUND ON</button>
+
+<button onclick="shareScore()">📤 Share Score</button>
+
+<button onclick="document.getElementById('gamesPage').style.display='block'">
+  🎮 More Games
+</button>
+
+<button onclick="document.getElementById('aboutPage').style.display='block'">
   ℹ️ About
 </button>
-    <button onclick="document.getElementById('privacyPage').style.display='block'">
+
+<button onclick="document.getElementById('privacyPage').style.display='block'">
   🔒 Privacy Policy
 </button>
-    <button onclick="document.getElementById('termsPage').style.display='block'">
+
+<button onclick="document.getElementById('termsPage').style.display='block'">
   📄 Terms & Conditions
 </button>
-    <button onclick="document.getElementById('contactPage').style.display='block'">
+
+<button onclick="document.getElementById('contactPage').style.display='block'">
   📩 Contact
 </button>
-  </button>
 
-  <a id="sponsorBox" href="#" target="_blank">
+<a id="sponsorBox" href="#" target="_blank">
   📢 Your Business Here
 </a>
 
-  <div id="gamesPage" style="display:none;">
-  
-    <p>New games coming soon!</p>
-    <button onclick="location.reload()">⬅️ Back</button>
-  </div>
+<div id="gamesPage" style="display:none;">
+  <h2>🎮 More Games</h2>
+  <p>New games coming soon!</p>
+  <button onclick="document.getElementById('gamesPage').style.display='none'">
+    ⬅️ Back
+  </button>
+</div>
 
-  <script src="./script.js"></script>
 <div id="aboutPage" style="display:none;">
   <h2>ℹ️ About Tap Challenge</h2>
   <p>Tap Challenge ek simple reaction aur tapping game hai.</p>
@@ -88,31 +93,34 @@
     ⬅️ Back
   </button>
 </div>
-  <div id="privacyPage" style="display:none;">
+
+<div id="privacyPage" style="display:none;">
   <h2>🔒 Privacy Policy</h2>
   <p>Tap Challenge may use basic browser storage to save your best score.</p>
   <p>We do not ask users for passwords, payment details, or other sensitive information.</p>
-
   <button onclick="document.getElementById('privacyPage').style.display='none'">
     ⬅️ Back
   </button>
 </div>
-  <div id="termsPage" style="display:none;">
+
+<div id="termsPage" style="display:none;">
   <h2>📄 Terms & Conditions</h2>
   <p>By using Tap Challenge, you agree to use the game responsibly and for its intended purpose.</p>
   <p>The game is provided for entertainment purposes.</p>
-
   <button onclick="document.getElementById('termsPage').style.display='none'">
     ⬅️ Back
   </button>
-    <div id="contactPage" style="display:none;">
+</div>
+
+<div id="contactPage" style="display:none;">
   <h2>📩 Contact</h2>
   <p>For questions or business inquiries, please contact us.</p>
-
   <button onclick="document.getElementById('contactPage').style.display='none'">
     ⬅️ Back
   </button>
 </div>
-</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
