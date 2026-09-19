@@ -270,3 +270,8 @@ function shareScore() {
   }
 
 }
+const premiumButton = document.getElementById("premiumButton");
+
+premiumButton.addEventListener("click", function () {
+  alert("💎 Premium 60 Second Mode — Coming Soon!");
+});
