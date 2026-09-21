@@ -1,6 +1,7 @@
 let score = 0;
 let time = 30;
 let playing = false;
+let gameDuration = 30;
 let timer;
 
 let bestScore = Number(localStorage.getItem("tapBestScore")) || 0;
@@ -32,7 +33,7 @@ tapButton.disabled = true;
 startButton.addEventListener("click", function () {
 
   score = 0;
-  time = 30;
+  time = gameDuration;
   playing = false;
   combo = 0;
   lastTapTime = 0;
@@ -84,7 +85,7 @@ tapButton.addEventListener("click", function () {
       timeText.textContent = time;
 
       progressBar.style.width =
-        (time / 30 * 100) + "%";
+        (time / 60 * 100) + "%";
 
       if (time <= 0) {
 
@@ -273,7 +274,7 @@ function shareScore() {
 const premiumButton = document.getElementById("premiumButton");
 
 premiumButton.addEventListener("click", function () {
-  time = 60;
+  gameDuration = 60;
   timeText.textContent = "60";
   progressBar.style.width = "100%";
   alert("💎 Premium 60 Second Mode Activated!");
