@@ -273,5 +273,8 @@ function shareScore() {
 const premiumButton = document.getElementById("premiumButton");
 
 premiumButton.addEventListener("click", function () {
-  alert("💎 Premium 60 Second Mode — Coming Soon!");
+  time = 60;
+  timeText.textContent = "60";
+  progressBar.style.width = "100%";
+  alert("💎 Premium 60 Second Mode Activated!");
 });
